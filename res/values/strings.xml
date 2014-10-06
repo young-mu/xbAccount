@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">xb_account</string>
+    <string name="addActivity">Add</string>
+    <string name="viewActivity">View</string>
+    <string name="editActivity">Edit</string>
+    <string name="addBtn">Account</string>
+    <string name="viewBtn">View</string>
+    <string name="mainTv">Designed by Young</string>
+    <string name="priceTv">Price</string>
+    <string name="priceEt">0.0</string>
+    <string name="dateTv">Date</string>
+    <string name="dateEt">NULL</string>
+    <string name="timeTv">Time</string>
+    <string name="timeEt">NULL</string>
+    <string name="typeTv">Payment Type</string>
+    <string name="typeBtn1">FoodMarket</string>
+    <string name="typeBtn2">SuperMarket</string>
+    <string name="typeBtn3">Entertainment</string>
+    <string name="typeBtn4">Mall</string>
+    <string name="typeBtn5">Traffic</string>
+    <string name="typeBtn6">WEC</string>
+    <string name="typeBtn7">Others</string>
+    <string name="methodTv">Payment Method</string>
+    <string name="methodBtn1">CMBC (1541)</string>
+    <string name="methodBtn2">CMBC (8591)</string>
+    <string name="methodBtn3">CGB (2251)</string>
+    <string name="methodBtn4">Cash</string>
+    <string name="remarkTv">Remark</string>
+    <string name="remarkEt">NULL</string>
+    <string name="okBtn">OK</string>
+    <string name="cancelBtn">Cancel</string>
+
+</resources>
