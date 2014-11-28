@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">xb_account</string>
     <string name="addActivity">Add</string>
     <string name="viewActivity">View</string>
@@ -31,5 +29,4 @@
     <string name="remarkEt">NULL</string>
     <string name="okBtn">OK</string>
     <string name="cancelBtn">Cancel</string>
-
 </resources>
