@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/background"
     android:clickable="true"
@@ -9,245 +8,245 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical" >
-    
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical" >
-        
-	    <LinearLayout
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="vertical" >
-    
-		    <LinearLayout 
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:orientation="horizontal" >
-		        
-		        <TextView 
-		            android:id="@+id/priceTv"
-		            android:layout_width="0dp" 
-		            android:layout_weight="1"
-		            android:layout_height="wrap_content"
-		            android:gravity="center_horizontal"
-		            android:text="@string/priceTv"/>
-		        
-		       <EditText
-		            android:id="@+id/priceEt"
-		            android:layout_width="0dp"
-		            android:layout_weight="2"
-		            android:layout_marginRight="30dp"
-		            android:layout_height="wrap_content"
-		            android:gravity="center_horizontal"
-		            android:hint="@string/priceEt"
-		            android:inputType="numberDecimal"
-		            android:imeOptions="actionDone" />
-		    </LinearLayout>
-		    
-		    <LinearLayout 
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:orientation="horizontal" >
-		        
-		        <TextView 
-		            android:id="@+id/dateTv"
-		            android:layout_width="0dp" 
-		            android:layout_weight="1"
-		            android:layout_height="wrap_content"
-		            android:gravity="center_horizontal"
-		            android:text="@string/dateTv"/>
-		        
-		       <EditText
-		            android:id="@+id/dateEt"
-		            android:layout_width="0dp"
-		            android:layout_weight="2"
-		            android:layout_marginRight="30dp"
-		            android:layout_height="wrap_content"
-		            android:gravity="center_horizontal"
-		            android:hint="@string/dateEt" />
-		    </LinearLayout>
-		        
-		    <LinearLayout 
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:orientation="horizontal" >
-		        
-		        <TextView 
-		            android:id="@+id/timeTv"
-		            android:layout_width="0dp" 
-		            android:layout_weight="1"
-		            android:layout_height="wrap_content"
-		            android:gravity="center_horizontal"
-		            android:text="@string/timeTv"/>
-		        
-		       <EditText
-		            android:id="@+id/timeEt"
-		            android:layout_width="0dp"
-		            android:layout_weight="2"
-		            android:layout_marginRight="30dp"
-		            android:layout_height="wrap_content"
-		            android:gravity="center_horizontal"
-		            android:hint="@string/timeEt" />
-		    </LinearLayout>
-		    
-		    <LinearLayout 
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:orientation="horizontal" >
-		        
-		        <TextView 
-		            android:id="@+id/typeTv"
-		            android:layout_width="0dp" 
-		            android:layout_weight="1"
-		            android:layout_height="wrap_content"
-		            android:gravity="center_horizontal"
-		            android:layout_marginTop="9dp"
-		            android:text="@string/typeTv"/>
-		       
-		        <RadioGroup
-					android:id="@+id/typeRg"
-					android:layout_width="0dp"
-		            android:layout_weight="1.6"
-				    android:layout_height="wrap_content"
-				    android:gravity="left"
-				    android:orientation="vertical" >
-		       
-		    		<RadioButton
-		        		android:id="@+id/typeBtn1"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:checked="true"
-				        android:text="@string/typeBtn1" />
-				    <RadioButton
-				        android:id="@+id/typeBtn2"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:text="@string/typeBtn2" />
-				    <RadioButton
-				        android:id="@+id/typeBtn3"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:text="@string/typeBtn3" /> 
-				    <RadioButton
-				        android:id="@+id/typeBtn4"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:text="@string/typeBtn4" />
-				    <RadioButton
-				        android:id="@+id/typeBtn5"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:text="@string/typeBtn5" />
-				    <RadioButton
-				        android:id="@+id/typeBtn6"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:text="@string/typeBtn6" />
-				    <RadioButton
-				        android:id="@+id/typeBtn7"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:text="@string/typeBtn7" />
-				</RadioGroup>
-			</LinearLayout>
-		    
-		    <LinearLayout 
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:orientation="horizontal" >
-		        
-		        <TextView 
-		            android:id="@+id/methodTv"
-		            android:layout_width="0dp" 
-		            android:layout_weight="1"
-		            android:layout_height="wrap_content"
-		            android:gravity="center_horizontal"
-		        	android:layout_marginTop="9dp"
-		            android:text="@string/methodTv"/>
-		        
-		       	<RadioGroup
-					android:id="@+id/methodRg"
-					android:layout_width="0dp"
-		            android:layout_weight="1.6"
-				    android:layout_height="wrap_content"
-				    android:gravity="left"
-				    android:orientation="vertical" >
-		       
-		    		<RadioButton
-		        		android:id="@+id/methodBtn1"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:checked="true"
-				        android:text="@string/methodBtn1" />
-				    <RadioButton
-				        android:id="@+id/methodBtn2"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:text="@string/methodBtn2" />
-				    <RadioButton
-				        android:id="@+id/methodBtn3"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:text="@string/methodBtn3" /> 
-				    <RadioButton
-				        android:id="@+id/methodBtn4"
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:text="@string/methodBtn4" />
-				</RadioGroup>
-		    </LinearLayout>
-		    
-		    <LinearLayout 
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:orientation="horizontal" >
-		        
-		        <TextView 
-		            android:id="@+id/remarkTv"
-		            android:layout_width="0dp" 
-		            android:layout_weight="1"
-		            android:layout_height="wrap_content"
-		            android:gravity="center_horizontal"
-		            android:text="@string/remarkTv"/>
-		        
-		       <EditText
-		            android:id="@+id/remarkEt"
-		            android:layout_width="0dp"
-		            android:layout_weight="2"
-		            android:layout_marginRight="30dp"
-		            android:layout_height="wrap_content"
-		            android:gravity="center_horizontal"
-		            android:hint="@string/remarkEt"
-		            android:textSize="14sp"
-		            android:inputType="text"
-		            android:imeOptions="actionDone" />
-		    </LinearLayout>
-		    
-   		    <LinearLayout 
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_marginTop="10dp"
-		        android:orientation="horizontal" >
-		        
-		        <Button 
-		            android:id="@+id/okBtn"
-		            android:layout_width="0dp" 
-		            android:layout_weight="1"
-		            android:layout_height="wrap_content"
-		            android:gravity="center"
-		            android:text="@string/okBtn"/>
-		        
-		       <Button
-		            android:id="@+id/cancelBtn"
-		            android:layout_width="0dp"
-		            android:layout_weight="1"
-		            android:layout_height="wrap_content"
-		            android:gravity="center"
-		            android:text="@string/cancelBtn" />
-		    </LinearLayout>
 
-    	</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/priceTv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/priceTv"/>
+
+               <EditText
+                    android:id="@+id/priceEt"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="30dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/priceEt"
+                    android:inputType="numberDecimal"
+                    android:imeOptions="actionDone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/dateTv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/dateTv"/>
+
+               <EditText
+                    android:id="@+id/dateEt"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="30dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/dateEt" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/timeTv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/timeTv"/>
+
+               <EditText
+                    android:id="@+id/timeEt"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="30dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/timeEt" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/typeTv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="9dp"
+                    android:text="@string/typeTv"/>
+
+                <RadioGroup
+                    android:id="@+id/typeRg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.6"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:orientation="vertical" >
+
+                    <RadioButton
+                        android:id="@+id/typeBtn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/typeBtn1" />
+                    <RadioButton
+                        android:id="@+id/typeBtn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/typeBtn2" />
+                    <RadioButton
+                        android:id="@+id/typeBtn3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/typeBtn3" />
+                    <RadioButton
+                        android:id="@+id/typeBtn4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/typeBtn4" />
+                    <RadioButton
+                        android:id="@+id/typeBtn5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/typeBtn5" />
+                    <RadioButton
+                        android:id="@+id/typeBtn6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/typeBtn6" />
+                    <RadioButton
+                        android:id="@+id/typeBtn7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/typeBtn7" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/methodTv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="9dp"
+                    android:text="@string/methodTv"/>
+
+                <RadioGroup
+                    android:id="@+id/methodRg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.6"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:orientation="vertical" >
+
+                    <RadioButton
+                        android:id="@+id/methodBtn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/methodBtn1" />
+                    <RadioButton
+                        android:id="@+id/methodBtn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/methodBtn2" />
+                    <RadioButton
+                        android:id="@+id/methodBtn3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/methodBtn3" />
+                    <RadioButton
+                        android:id="@+id/methodBtn4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/methodBtn4" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/remarkTv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/remarkTv"/>
+
+               <EditText
+                    android:id="@+id/remarkEt"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="30dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/remarkEt"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:imeOptions="actionDone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/okBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/okBtn"/>
+
+               <Button
+                    android:id="@+id/cancelBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/cancelBtn" />
+            </LinearLayout>
+
+        </LinearLayout>
     </ScrollView>
-    
+
 </LinearLayout>

@@ -1,11 +1,14 @@
 <resources>
-    <string name="app_name">xb_account</string>
+    <!-- AndroidManifest.xml -->
+    <string name="app_name">xbAccount</string>
     <string name="addActivity">Add</string>
     <string name="viewActivity">View</string>
     <string name="editActivity">Edit</string>
+    <!-- res/layout/main.xml -->
     <string name="addBtn">Account</string>
     <string name="viewBtn">View</string>
     <string name="mainTv">Designed by Young</string>
+    <!-- res/layout/addaccount.xml  -->
     <string name="priceTv">Price</string>
     <string name="priceEt">0.0</string>
     <string name="dateTv">Date</string>
