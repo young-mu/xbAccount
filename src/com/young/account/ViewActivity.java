@@ -6,12 +6,15 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
+import android.app.ActionBar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
@@ -23,6 +26,7 @@ public class ViewActivity extends Activity implements OnItemClickListener, OnIte
 
     private static final String TAG = "ViewActivity";
 
+    private ActionBar actionbar;
     private ListView listview;
     private SimpleAdapter adapter;
     private List<Map<String, Object>> datalist;
@@ -39,6 +43,9 @@ public class ViewActivity extends Activity implements OnItemClickListener, OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewaccount);
 
+        //actionbar = getActionBar();
+        //actionbar.setDisplayShowHomeEnabled(false);
+
         listview = (ListView)findViewById(R.id.listview);
         listview.setOnItemClickListener(this);
         listview.setOnItemLongClickListener(this);
@@ -48,6 +55,23 @@ public class ViewActivity extends Activity implements OnItemClickListener, OnIte
                         new String[]{"numTt", "dateTt", "timeTt", "typeTt", "priceTt"},
                         new int[]{R.id.numTv_view, R.id.dateTv_view, R.id.timeTv_view, R.id.typeTv_view, R.id.priceTv_view});
         listview.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.view, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.action_sync:
+            Toast.makeText(this, "SYNC", Toast.LENGTH_SHORT).show();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     private List<Map<String, Object>> getData()
