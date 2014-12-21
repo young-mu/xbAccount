@@ -128,7 +128,7 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
         cancelBtn.setOnClickListener(this);
 
         // show keyboard
-	priceEt.requestFocus();
+        priceEt.requestFocus();
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
