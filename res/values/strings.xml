@@ -8,7 +8,7 @@
     <string name="addBtn">Account</string>
     <string name="viewBtn">View</string>
     <string name="mainTv">Designed by Young</string>
-    <!-- res/layout/addaccount.xml  -->
+    <!-- res/layout/addaccount.xml -->
     <string name="priceTv">Price</string>
     <string name="priceEt">0.0</string>
     <string name="dateTv">Date</string>
