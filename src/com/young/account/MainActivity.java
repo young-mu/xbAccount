@@ -11,7 +11,8 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "xbAccount";
+    private static final String subTAG = "MainActivity";
 
     private Button addBtn;
     private Button viewBtn;
@@ -35,17 +36,17 @@ public class MainActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
         case R.id.addBtn :
-            Log.i(TAG, "onClick addBtn");
+            Log.i(TAG, subTAG + "onClick addBtn");
             Intent intent_add = new Intent(MainActivity.this, AddActivity.class);
             startActivity(intent_add);
             break;
         case R.id.viewBtn :
-            Log.i(TAG, "onClick viewBtn");
+            Log.i(TAG, subTAG + "onClick viewBtn");
             Intent intent_view = new Intent(MainActivity.this, ViewActivity.class);
             startActivity(intent_view);
             break;
         case R.id.mainTv :
-            Log.i(TAG, "onClick mainTv");
+            Log.i(TAG, subTAG + "onClick mainTv");
             String str = getResources().getString(R.string.mainTv);
             mainTv.setText(str + " for xb");
         default :

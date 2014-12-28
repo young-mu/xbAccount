@@ -9,7 +9,8 @@ import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int VERSION = 1;
-    private static final String TAG = "DatabaseHelper";
+    private static final String TAG = "xbAccount";
+    private static final String subTAG = "subDatabaseHelper";
 
     // for creating or opening database
     public DatabaseHelper(Context context, String name) {
@@ -23,13 +24,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(Context context, String name, CursorFactory factory, int version) {
         super(context, name, factory, version);
-        Log.i(TAG, "constructor");
+        Log.i(TAG, subTAG + "constructor");
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.i(TAG, "onCreate");
+        Log.i(TAG, subTAG + "onCreate");
         db.execSQL("create table accounts(id integer primary key autoincrement, " +
+                                         "sync integer, " +
                                          "price float, " +
                                          "date varchar(10), " +
                                          "time varchar(10), " +
@@ -40,11 +42,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onOpen(SQLiteDatabase db) {
-        Log.i(TAG, "onOpen");
+        Log.i(TAG, subTAG + "onOpen");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.i(TAG, "onUpgrade");
+        Log.i(TAG, subTAG + "onUpgrade");
     }
 }

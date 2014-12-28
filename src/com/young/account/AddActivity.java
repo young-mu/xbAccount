@@ -34,7 +34,8 @@ import android.widget.Toast;
 
 public class AddActivity extends Activity implements OnClickListener, OnCheckedChangeListener {
 
-    private static final String TAG = "AddActivity";
+    private static final String TAG = "xbAccount";
+    private static final String subTAG = "(AddActivity) ";
     private static boolean okFlag = false;
     private static boolean cancelFlag = false;
 
@@ -143,12 +144,12 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
     public void onClick(View v) {
         switch (v.getId()) {
         case R.id.background :
-            Log.i(TAG, "onClick background");
+            Log.i(TAG, subTAG + "onClick background");
             InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
             break;
         case R.id.dateEt :
-            Log.i(TAG, "onClick dateEt");
+            Log.i(TAG, subTAG + "onClick dateEt");
             new DatePickerDialog(this, new OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -163,7 +164,7 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
             }, presetYear, presetMonth, presetDay).show();
             break;
         case R.id.timeEt :
-            Log.i(TAG, "onClick timeEt");
+            Log.i(TAG, subTAG + "onClick timeEt");
             new TimePickerDialog(this, new OnTimeSetListener() {
                 @Override
                 public void onTimeSet(TimePicker view, int hourOfDay, int minute){
@@ -176,7 +177,7 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
             }, presetHour, presetMinute, true).show();
             break;
         case R.id.okBtn :
-            Log.i(TAG, "onClick okBtn");
+            Log.i(TAG, subTAG + "onClick okBtn");
 
             // get all contents and check price validity
             String priceStr = priceEt.getText().toString();
@@ -206,10 +207,11 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
             String remark2submit = remarkEt.getText().toString();
 
             // add to SQLite database
-            Log.i(TAG, "add acoount item to sqlite database");
+            Log.i(TAG, subTAG + "add acoount item to sqlite database");
             DatabaseHelper dbHelper = new DatabaseHelper(AddActivity.this, "xb_account");
             SQLiteDatabase db = dbHelper.getReadableDatabase();
             ContentValues value = new ContentValues();
+            value.put("sync", 0);
             value.put("price", price2submit);
             value.put("date", date2submit);
             value.put("time",  time2submit);
@@ -217,7 +219,7 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
             value.put("method", method2submit);
             value.put("remark",  remark2submit);
             db.insert("accounts", null, value);
-            Log.i(TAG, "add success");
+            Log.i(TAG, subTAG + "add success");
 
             // show success info and exit to home page
             String str2 = "[add success]" + "\n\n"
@@ -242,7 +244,7 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
             okFlag = true;
             break;
         case R.id.cancelBtn :
-            Log.i(TAG, "onClick cancelBtn");
+            Log.i(TAG, subTAG + "onClick cancelBtn");
             // set cancelFlag as true to remove shared_pref
             cancelFlag = true;
             finish();
@@ -256,47 +258,47 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
         case R.id.typeBtn1 :
-            Log.i(TAG, "onCheckedChanged typeBtn1");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn1");
             type = typeBtn1.getText().toString();
             break;
         case R.id.typeBtn2 :
-            Log.i(TAG, "onCheckedChanged typeBtn2");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn2");
             type = typeBtn2.getText().toString();
             break;
         case R.id.typeBtn3 :
-            Log.i(TAG, "onCheckedChanged typeBtn3");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn3");
             type = typeBtn3.getText().toString();
             break;
         case R.id.typeBtn4 :
-            Log.i(TAG, "onCheckedChanged typeBtn4");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn4");
             type = typeBtn4.getText().toString();
             break;
         case R.id.typeBtn5 :
-            Log.i(TAG, "onCheckedChanged typeBtn5");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn5");
             type = typeBtn5.getText().toString();
             break;
         case R.id.typeBtn6 :
-            Log.i(TAG, "onCheckedChanged typeBtn6");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn6");
             type = typeBtn6.getText().toString();
             break;
         case R.id.typeBtn7 :
-            Log.i(TAG, "onCheckedChanged typeBtn7");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn7");
             type = typeBtn7.getText().toString();
             break;
         case R.id.methodBtn1 :
-            Log.i(TAG, "onCheckedChanged methodBtn1");
+            Log.i(TAG, subTAG + "onCheckedChanged methodBtn1");
             method = methodBtn1.getText().toString();
             break;
         case R.id.methodBtn2 :
-            Log.i(TAG, "onCheckedChanged methodBtn2");
+            Log.i(TAG, subTAG + "onCheckedChanged methodBtn2");
             method = methodBtn2.getText().toString();
             break;
         case R.id.methodBtn3 :
-            Log.i(TAG, "onCheckedChanged methodBtn3");
+            Log.i(TAG, subTAG + "onCheckedChanged methodBtn3");
             method = methodBtn3.getText().toString();
             break;
         case R.id.methodBtn4 :
-            Log.i(TAG, "onCheckedChanged methodBtn4");
+            Log.i(TAG, subTAG + "onCheckedChanged methodBtn4");
             method = methodBtn4.getText().toString();
             break;
         default :
@@ -307,7 +309,7 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
     @Override
     protected void onPause() {
         super.onPause();
-        Log.i(TAG, "onPause");
+        Log.i(TAG, subTAG + "onPause");
         if (okFlag | cancelFlag) {
             okFlag = false;
             cancelFlag = false;
@@ -343,12 +345,12 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i(TAG, "onResume");
+        Log.i(TAG, subTAG + "onResume");
 
         SharedPreferences sp = getSharedPreferences("addItem", MODE_PRIVATE);
         // set priceEt if getString succeed
         Float price = sp.getFloat("price", 0.0f);
-        Log.i(TAG, "price = " + price);
+        Log.i(TAG, subTAG + "price = " + price);
         if (price != 0.0) {
             priceEt.setText(price + "");
             priceEt.setSelection((price + "").length()); // set the cursor in the end
@@ -356,19 +358,19 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
 
         // set dateEt if getString succeed
         String date = sp.getString("date", "");
-        Log.i(TAG, "date = " + date);
+        Log.i(TAG, subTAG + "date = " + date);
         if (!date.equals("")) {
             dateEt.setText(date);
         }
         // set timeEt if getString succeed
         String time = sp.getString("time", "");
-        Log.i(TAG, "time = " + time);
+        Log.i(TAG, subTAG + "time = " + time);
         if (!time.equals("")) {
             timeEt.setText(time);
         }
         // check typeGp if getString succeed
         String type = sp.getString("type", "");
-        Log.i(TAG, "type = " + type);
+        Log.i(TAG, subTAG + "type = " + type);
         if (type.equals(getResources().getString(R.string.typeBtn1))) {
             typeBtn1.setChecked(true);
         } else if (type.equals(getResources().getString(R.string.typeBtn2))) {
@@ -386,7 +388,7 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
         }
         // check methodGp if getString succeed
         String method = sp.getString("method", "");
-        Log.i(TAG, "method = " + method);
+        Log.i(TAG, subTAG + "method = " + method);
         if (method.equals(getResources().getString(R.string.methodBtn1))) {
             methodBtn1.setChecked(true);
         } else if (method.equals(getResources().getString(R.string.methodBtn2))) {
@@ -398,7 +400,7 @@ public class AddActivity extends Activity implements OnClickListener, OnCheckedC
         }
         // set remarkEt if getString succeed
         String remark = sp.getString("remark", "");
-        Log.i(TAG, "remark = " + remark);
+        Log.i(TAG, subTAG + "remark = " + remark);
         if (!remark.equals("")) {
             remarkEt.setText(remark);
         }

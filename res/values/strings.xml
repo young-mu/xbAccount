@@ -26,7 +26,7 @@
     <string name="methodTv">Payment Method</string>
     <string name="methodBtn1">CMBC (1541)</string>
     <string name="methodBtn2">CMBC (8591)</string>
-    <string name="methodBtn3">CGB (2251)</string>
+    <string name="methodBtn3">YEB</string>
     <string name="methodBtn4">Cash</string>
     <string name="remarkTv">Remark</string>
     <string name="remarkEt">NULL</string>

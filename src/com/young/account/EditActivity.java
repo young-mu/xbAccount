@@ -28,7 +28,8 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 
 public class EditActivity extends Activity implements OnClickListener, OnCheckedChangeListener {
 
-    private static final String TAG = "EditActivity";
+    private static final String TAG = "xbAccount";
+    private static final String subTAG = "EditActivity";
 
     private int presetYear;
     private int presetMonth;
@@ -100,12 +101,12 @@ public class EditActivity extends Activity implements OnClickListener, OnChecked
         presetYear = Integer.parseInt(tmpDate[0]);
         presetMonth = Integer.parseInt(tmpDate[1]) - 1;
         presetDay = Integer.parseInt(tmpDate[2]);
-        Log.d(TAG, "presetDate : " + presetYear + " " + presetMonth + " " + presetDay);
+        Log.d(TAG, subTAG + "presetDate : " + presetYear + " " + presetMonth + " " + presetDay);
         oldTime = bundle.getString("time");
         String[] tmpTime = oldTime.split(":", 2);
         presetHour = Integer.parseInt(tmpTime[0]);
         presetMinute = Integer.parseInt(tmpTime[1]);
-        Log.d(TAG, "presetTime : " + presetHour + " " + presetMinute);
+        Log.d(TAG, subTAG + "presetTime : " + presetHour + " " + presetMinute);
         oldRemark = bundle.getString("remark");
         // fill in price/date/time/remark EditText
         priceEt.setText(oldPrice + "");
@@ -117,7 +118,7 @@ public class EditActivity extends Activity implements OnClickListener, OnChecked
         // fill in type/method GroupRadio
         oldType = bundle.getString("type");
         newType = oldType;
-        Log.i(TAG, "type = " + oldType);
+        Log.i(TAG, subTAG + "type = " + oldType);
         if (oldType.equals(getResources().getString(R.string.typeBtn1))) {
             typeBtn1.setChecked(true);
         } else if (oldType.equals(getResources().getString(R.string.typeBtn2))) {
@@ -135,7 +136,7 @@ public class EditActivity extends Activity implements OnClickListener, OnChecked
         }
         oldMethod = bundle.getString("method");
         newMethod = oldMethod;
-        Log.i(TAG, "method = " + oldMethod);
+        Log.i(TAG, subTAG + "method = " + oldMethod);
         if (oldMethod.equals(getResources().getString(R.string.methodBtn1))) {
             methodBtn1.setChecked(true);
         } else if (oldMethod.equals(getResources().getString(R.string.methodBtn2))) {
@@ -167,12 +168,12 @@ public class EditActivity extends Activity implements OnClickListener, OnChecked
     public void onClick(View v) {
         switch (v.getId()) {
         case R.id.background :
-            Log.i(TAG, "onClick background");
+            Log.i(TAG, subTAG + "onClick background");
             InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
             break;
         case R.id.dateEt :
-            Log.i(TAG, "onClick dateEt");
+            Log.i(TAG, subTAG + "onClick dateEt");
             new DatePickerDialog(this, new OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -187,7 +188,7 @@ public class EditActivity extends Activity implements OnClickListener, OnChecked
             }, presetYear, presetMonth, presetDay).show();
             break;
         case R.id.timeEt :
-            Log.i(TAG, "onClick timeEt");
+            Log.i(TAG, subTAG + "onClick timeEt");
             new TimePickerDialog(this, new OnTimeSetListener() {
                 @Override
                 public void onTimeSet(TimePicker view, int hourOfDay, int minute){
@@ -200,7 +201,7 @@ public class EditActivity extends Activity implements OnClickListener, OnChecked
             }, presetHour, presetMinute, true).show();
             break;
         case R.id.okBtn : // updateBtn
-            Log.i(TAG, "onClick updateBtn");
+            Log.i(TAG, subTAG + "onClick updateBtn");
             // get all contents and check price validity
             String priceStr = priceEt.getText().toString();
             if (!priceStr.equals("")) {
@@ -229,13 +230,13 @@ public class EditActivity extends Activity implements OnClickListener, OnChecked
             SQLiteDatabase db = dbHelper.getReadableDatabase();
             if (oldPrice != newPrice || oldDate != newDate || oldTime != newTime ||
                 oldType != newType || oldMethod != newMethod || oldRemark != newRemark) {
-                Log.i(TAG, "update one acoount item in sqlite database");
-                Log.i(TAG, "oldPrice = " + oldPrice + ", newPrice = " + newPrice);
-                Log.i(TAG, "oldDate = " + oldDate + ", newDate = " + newDate);
-                Log.i(TAG, "oldTime = " + oldTime + ", newTime = " + newTime);
-                Log.i(TAG, "oldType = " + oldType + ", newType = " + newType);
-                Log.i(TAG, "oldMethod = " + oldMethod + ", newMethod = " + newMethod);
-                Log.i(TAG, "oldRemark = " + oldRemark + ", newRemark = " + newRemark);
+                Log.i(TAG, subTAG + "update one acoount item in sqlite database");
+                Log.i(TAG, subTAG + "oldPrice = " + oldPrice + ", newPrice = " + newPrice);
+                Log.i(TAG, subTAG + "oldDate = " + oldDate + ", newDate = " + newDate);
+                Log.i(TAG, subTAG + "oldTime = " + oldTime + ", newTime = " + newTime);
+                Log.i(TAG, subTAG + "oldType = " + oldType + ", newType = " + newType);
+                Log.i(TAG, subTAG + "oldMethod = " + oldMethod + ", newMethod = " + newMethod);
+                Log.i(TAG, subTAG + "oldRemark = " + oldRemark + ", newRemark = " + newRemark);
                 db.execSQL("update accounts set price = " + newPrice +
                                              ", date = \"" + newDate +
                                              "\", time = \"" + newTime +
@@ -262,7 +263,7 @@ public class EditActivity extends Activity implements OnClickListener, OnChecked
             }
             break;
         case R.id.cancelBtn : // deleteBtn
-            Log.i(TAG, "onClick deleteBtn");
+            Log.i(TAG, subTAG + "onClick deleteBtn");
             DatabaseHelper dbHelper2 = new DatabaseHelper(EditActivity.this, "xb_account");
             SQLiteDatabase db2 = dbHelper2.getReadableDatabase();
             db2.execSQL("delete from accounts where id=" + pkid);
@@ -287,47 +288,47 @@ public class EditActivity extends Activity implements OnClickListener, OnChecked
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
         case R.id.typeBtn1 :
-            Log.i(TAG, "onCheckedChanged typeBtn1");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn1");
             newType = typeBtn1.getText().toString();
             break;
         case R.id.typeBtn2 :
-            Log.i(TAG, "onCheckedChanged typeBtn2");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn2");
             newType = typeBtn2.getText().toString();
             break;
         case R.id.typeBtn3 :
-            Log.i(TAG, "onCheckedChanged typeBtn3");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn3");
             newType = typeBtn3.getText().toString();
             break;
         case R.id.typeBtn4 :
-            Log.i(TAG, "onCheckedChanged typeBtn4");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn4");
             newType = typeBtn4.getText().toString();
             break;
         case R.id.typeBtn5 :
-            Log.i(TAG, "onCheckedChanged typeBtn5");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn5");
             newType = typeBtn5.getText().toString();
             break;
         case R.id.typeBtn6 :
-            Log.i(TAG, "onCheckedChanged typeBtn6");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn6");
             newType = typeBtn6.getText().toString();
             break;
         case R.id.typeBtn7 :
-            Log.i(TAG, "onCheckedChanged typeBtn7");
+            Log.i(TAG, subTAG + "onCheckedChanged typeBtn7");
             newType = typeBtn7.getText().toString();
             break;
         case R.id.methodBtn1 :
-            Log.i(TAG, "onCheckedChanged methodBtn1");
+            Log.i(TAG, subTAG + "onCheckedChanged methodBtn1");
             newMethod = methodBtn1.getText().toString();
             break;
         case R.id.methodBtn2 :
-            Log.i(TAG, "onCheckedChanged methodBtn2");
+            Log.i(TAG, subTAG + "onCheckedChanged methodBtn2");
             newMethod = methodBtn2.getText().toString();
             break;
         case R.id.methodBtn3 :
-            Log.i(TAG, "onCheckedChanged methodBtn3");
+            Log.i(TAG, subTAG + "onCheckedChanged methodBtn3");
             newMethod = methodBtn3.getText().toString();
             break;
         case R.id.methodBtn4 :
-            Log.i(TAG, "onCheckedChanged methodBtn4");
+            Log.i(TAG, subTAG + "onCheckedChanged methodBtn4");
             newMethod = methodBtn4.getText().toString();
             break;
         default :
