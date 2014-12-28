@@ -4,11 +4,10 @@ xbAccount
 an Android application to keep daily expenses
 
 Usages:
-<pre><code>
-\# cd JNIitf
-\# android list target (choose SDK target ID)
-\# android update project -n xbAccount -p . -t [target-ID]
-\# ant debug
-\# adb install bin/xbAccount-debug.apk
-</pre></code>
 
+<pre><code>
+\# cd xbAccount
+\# android list target (choose SDK target ID)
+\# ./make <sdkID>
+</pre></code>
+(copy appID to app-id file first)
