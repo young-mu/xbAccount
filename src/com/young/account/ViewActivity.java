@@ -94,8 +94,8 @@ public class ViewActivity extends Activity implements OnItemClickListener, OnIte
         if (itemNum >= 1) {
             Cursor cursor = db.rawQuery("select * from accounts where sync=0", null);
             List<BmobObject> itemobjs = new ArrayList<BmobObject>();
-            Item itemobj = new Item();
             for (int i = 1; i <= itemNum; i++) {
+                Item itemobj = new Item();
                 cursor.moveToNext();
                 // get value from SQLite database
                 int pkid = cursor.getInt(cursor.getColumnIndex("id"));
